@@ -19,7 +19,7 @@ public class JpaRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Account account = new Account();
-        account.setUsername("keesun");
+        account.setUsername("whiteship");
         account.setPassword("hibernate");
 
         // hibernate session을 사용하여 저장
