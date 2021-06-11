@@ -1,5 +1,6 @@
 package com.example.lecspringdatajpa;
 
+import org.hibernate.Session;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -19,8 +20,10 @@ public class JpaRunner implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         Account account = new Account();
         account.setUsername("keesun");
-        account.setPassword("jpa");
+        account.setPassword("hibernate");
 
-        entityManager.persist(account);
+        // hibernate session을 사용하여 저장
+        Session session = entityManager.unwrap(Session.class);
+        session.save(account);
     }
 }
