@@ -21,6 +21,9 @@ public class Account {
     @Transient
     private String noColumn;
 
+    @Embedded
+    private Address address;
+
     public Long getId() {
         return id;
     }
