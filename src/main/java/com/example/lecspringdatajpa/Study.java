@@ -3,7 +3,6 @@ package com.example.lecspringdatajpa;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Study {
@@ -13,9 +12,6 @@ public class Study {
     private Long id;
 
     private String name;
-
-    @ManyToOne
-    private Account owner;
 
     public Long getId() {
         return id;
@@ -31,13 +27,5 @@ public class Study {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Account getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Account owner) {
-        this.owner = owner;
     }
 }
