@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.HashSet;
 
 @Component
 @Transactional
@@ -32,5 +31,10 @@ public class JpaRunner implements ApplicationRunner {
         Session session = entityManager.unwrap(Session.class);
         session.save(account);
         session.save(study);
+
+        Account persistentAccount = session.load(Account.class, account.getId());
+        persistentAccount.setUsername("keesun");
+        System.out.println("==============================");
+        System.out.println(persistentAccount.getUsername());
     }
 }
