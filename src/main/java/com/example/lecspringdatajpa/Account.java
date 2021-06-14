@@ -51,4 +51,15 @@ public class Account {
     public void setStudies(Set<Study> studies) {
         this.studies = studies;
     }
+
+    // 양방향 관계 설정
+    public void addStudy(Study study) {
+        this.getStudies().add(study);
+        study.setOwner(this);
+    }
+
+    private void removeStudy(Study study) {
+        this.getStudies().remove(study);
+        study.setOwner(null);
+    }
 }
