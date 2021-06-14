@@ -17,7 +17,7 @@ public class Account {
 
     private String password;
 
-    @OneToMany
+    @OneToMany(mappedBy = "owner")
     private Set<Study> studies = new HashSet<>();
 
     public Long getId() {
