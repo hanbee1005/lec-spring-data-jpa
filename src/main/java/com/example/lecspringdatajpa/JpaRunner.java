@@ -13,12 +13,14 @@ public class JpaRunner implements ApplicationRunner {
     @Autowired
     PostRepository postRepository;
 
-    @Autowired
-    Keesun keesun;
-
     @Override
     public void run(ApplicationArguments args) {
-         postRepository.findAll().forEach(System.out::println);
-         System.out.println(keesun.getName());
+         Post post = new Post();
+         post.setTitle("spring");
+
+         Comment comment = new Comment();
+         comment.setComment("hello");
+
+         postRepository.save(post);
     }
 }
