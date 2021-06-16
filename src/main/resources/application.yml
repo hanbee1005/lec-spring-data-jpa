@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: testuser
-    password: test123
+    url: jdbc:postgresql://localhost:5678/postgres
+    username: jpalec
+    password: pass
 
   jpa:
     hibernate:
@@ -11,3 +11,19 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+---
+
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: testuser
+#    password: test123
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
