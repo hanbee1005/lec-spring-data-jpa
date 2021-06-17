@@ -37,4 +37,9 @@ class CommentRepositoryTest {
         Comment comment1 = byId.orElseThrow(IllegalArgumentException::new);
 
     }
+
+    @Test
+    public void checkNullAnnotation() {
+        commentRepository.save(null);
+    }
 }
