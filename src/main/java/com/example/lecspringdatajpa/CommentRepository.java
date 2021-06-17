@@ -12,7 +12,7 @@ public interface CommentRepository extends MyRepository<Comment, Long> {
 
     // Pageable은 Sort 기능도 포함되어 있음.
     // List 타입으로 리턴 받을 수 있음. but, 페이징 관련 정보는 사라짐.
-    Page<Comment> findByLikeGreaterThanAndPostOrderByLikeDesc(int likeCount, Post post, Pageable pageable);
+    Page<Comment> findByLikeCountGreaterThanAndPostOrderByLikeCountDesc(int likeCount, Post post, Pageable pageable);
 
-    List<Comment> findByLikeGreaterThanAndPost(int likeCount, Post post, Sort sort);
+    List<Comment> findByLikeCountGreaterThanAndPost(int likeCount, Post post, Sort sort);
 }
