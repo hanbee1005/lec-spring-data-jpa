@@ -2,17 +2,19 @@ package com.example.lecspringdatajpa;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
 public interface CommentRepository extends MyRepository<Comment, Long> {
 
     List<Comment> findByCommentContains(String keyword);
+    List<Comment> findByCommentContainsIgnoreCase(String keyword);
 
-    // Pageable은 Sort 기능도 포함되어 있음.
-    // List 타입으로 리턴 받을 수 있음. but, 페이징 관련 정보는 사라짐.
-    Page<Comment> findByLikeCountGreaterThanAndPostOrderByLikeCountDesc(int likeCount, Post post, Pageable pageable);
+    List<Comment> findByCommentContainsAndLikeCountGreaterThan(String keyword, int likeCount);
 
-    List<Comment> findByLikeCountGreaterThanAndPost(int likeCount, Post post, Sort sort);
+    List<Comment> findByCommentContainsIgnoreCaseOrderByLikeCountDesc(String keyword);
+
+    // Stream 타입을 반환 받을 수도 있음
+    // 사용할 때 try-catch 문으로 받아서 사용해야 함
+    Page<Comment> findByCommentContainsIgnoreCase(String keyword, Pageable pageable);
 }
