@@ -17,6 +17,8 @@ public class Comment {
     @ManyToOne
     private Post post;
 
+    private int like;
+
     public Long getId() {
         return id;
     }
@@ -39,5 +41,13 @@ public class Comment {
 
     public void setPost(Post post) {
         this.post = post;
+    }
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
     }
 }
