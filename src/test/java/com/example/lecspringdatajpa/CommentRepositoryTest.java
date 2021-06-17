@@ -11,6 +11,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -36,11 +38,11 @@ class CommentRepositoryTest {
         // Then
         assertThat(comments.size()).isEqualTo(0);
 
-        // Given
-        comments = commentRepository.findByCommentContainsIgnoreCase("spring");
-
-        // When
-        assertThat(comments.size()).isEqualTo(1);
+//        // Given
+//        comments = commentRepository.findByCommentContainsIgnoreCase("spring");
+//
+//        // When
+//        assertThat(comments.size()).isEqualTo(1);
     }
 
     @Test
@@ -78,6 +80,19 @@ class CommentRepositoryTest {
 
         assertThat(comments).first().hasFieldOrPropertyWithValue("likeCount", 100);
         assertThat(comments).last().hasFieldOrPropertyWithValue("likeCount", 55);
+    }
+
+    @Test
+    public void asyncFutureCommentContains() throws ExecutionException, InterruptedException {
+        // When
+        Future<List<Comment>> future = commentRepository.findByCommentContainsIgnoreCase("jpa");
+
+        // Then
+        System.out.println("==========================");
+        System.out.println("is done? " + future.isDone());
+
+        List<Comment> comments = future.get();
+        comments.forEach(System.out::println);
     }
 
     private void createComment(String comment, int likeCount) {
