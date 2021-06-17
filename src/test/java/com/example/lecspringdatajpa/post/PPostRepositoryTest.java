@@ -17,7 +17,14 @@ class PPostRepositoryTest {
 
     @Test
     public void crud() {
+        PPost post = new PPost();
+        post.setTitle("hibernate");
+        pPostRepository.save(post);
+
         pPostRepository.findMyPost();
+
+        pPostRepository.delete(post);
+        pPostRepository.flush();
     }
 
 }
