@@ -1,4 +1,6 @@
-package com.example.lecspringdatajpa;
+package com.example.lecspringdatajpa.lec01;
+
+import com.example.lecspringdatajpa.lec01.Account;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

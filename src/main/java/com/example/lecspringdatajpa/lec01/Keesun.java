@@ -1,4 +1,4 @@
-package com.example.lecspringdatajpa;
+package com.example.lecspringdatajpa.lec01;
 
 public class Keesun {
 

@@ -1,4 +1,4 @@
-package com.example.lecspringdatajpa;
+package com.example.lecspringdatajpa.lec01;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;

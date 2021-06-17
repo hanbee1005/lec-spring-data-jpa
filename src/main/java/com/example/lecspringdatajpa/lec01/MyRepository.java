@@ -1,4 +1,4 @@
-package com.example.lecspringdatajpa;
+package com.example.lecspringdatajpa.lec01;
 
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.Repository;

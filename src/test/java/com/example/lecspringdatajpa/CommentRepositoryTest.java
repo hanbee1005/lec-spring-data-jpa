@@ -1,5 +1,7 @@
 package com.example.lecspringdatajpa;
 
+import com.example.lecspringdatajpa.lec01.Comment;
+import com.example.lecspringdatajpa.lec01.CommentRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,10 +17,8 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest

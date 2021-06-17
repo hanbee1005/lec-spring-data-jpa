@@ -1,5 +1,7 @@
 package com.example.lecspringdatajpa;
 
+import com.example.lecspringdatajpa.lec01.Post;
+import com.example.lecspringdatajpa.lec01.PostRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
