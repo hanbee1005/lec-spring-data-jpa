@@ -1,4 +1,4 @@
-package com.example.lecspringdatajpa;
+package com.example.lecspringdatajpa.lec01;
 
 import com.example.lecspringdatajpa.lec01.Comment;
 import com.example.lecspringdatajpa.lec01.CommentRepository;
