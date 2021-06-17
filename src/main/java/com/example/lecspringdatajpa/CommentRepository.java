@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface CommentRepository extends MyRepository<Comment, Long> {
 
-    @Query("SELECT c from Comment as c")
+    @Query(value = "SELECT * from Comment as c", nativeQuery = true)
     List<Comment> findByTitleContains(String keyword);
 }
