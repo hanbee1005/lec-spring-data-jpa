@@ -5,6 +5,7 @@ import org.springframework.data.repository.Repository;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Optional;
 
 @NoRepositoryBean
 public interface MyRepository<T, Id extends Serializable> extends Repository<T, Id> {
@@ -14,4 +15,6 @@ public interface MyRepository<T, Id extends Serializable> extends Repository<T, 
     List<T> findAll();
 
     long count();
+
+    <E extends T> Optional<E> findById(Id id);
 }
