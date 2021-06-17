@@ -17,7 +17,7 @@ class PPostRepositoryTest {
 
     @Test
     public void crud() {
-
+        pPostRepository.findMyPost();
     }
 
 }
