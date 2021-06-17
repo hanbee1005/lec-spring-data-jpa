@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.QueryLookupStrategy;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
-@EnableJpaRepositories(repositoryImplementationPostfix = "Default")
 public class LecSpringDataJpaApplication {
 
     public static void main(String[] args) {
